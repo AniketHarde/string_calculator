@@ -20,4 +20,10 @@ RSpec.describe StringCalculator do
       expect(calculator.add("11")).to eq(11)
     end
   end
+
+  context "when given two numbers" do
+    it "is expected to return 3 for '1,2'" do
+      expect(calculator.add("1,2")).to eq(3)
+    end
+  end
 end
