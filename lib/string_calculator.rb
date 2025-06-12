@@ -8,6 +8,7 @@ class StringCalculator
   private
 
   def sum_of_numbers(numbers)
-    numbers.split(",").map(&:to_i).sum
+    normalized = numbers.gsub("\n", ",")
+    normalized.split(",").map(&:to_i).sum
   end
 end
