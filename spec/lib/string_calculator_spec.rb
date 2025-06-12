@@ -49,5 +49,9 @@ RSpec.describe StringCalculator do
     it "is expected to return 6 for '1\\n2,3'" do
       expect(calculator.add("1\n2,3")).to eq(6)
     end
+
+    it "is expected to return 6 for '1\\n2\\n3'" do
+      expect(calculator.add("1\n2\n3")).to eq(6)
+    end
   end
 end
