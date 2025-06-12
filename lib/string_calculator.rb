@@ -8,6 +8,6 @@ class StringCalculator
   private
 
   def sum_of_numbers(numbers)
-    numbers.split(",", 2).map(&:to_i).sum
+    numbers.split(",").map(&:to_i).sum
   end
 end

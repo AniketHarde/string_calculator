@@ -35,5 +35,13 @@ RSpec.describe StringCalculator do
     it "is expected to return 6 for '1,2,3'" do
       expect(calculator.add("1,2,3")).to eq(6)
     end
+    it "is expected to return 55 for '10,20,25'" do
+      expect(calculator.add("10,20,25")).to eq(55)
+    end
+
+    it "is expected to return 100 for '25,25,50'" do
+      expect(calculator.add("25,25,50")).to eq(100)
+    end
+
   end
 end
