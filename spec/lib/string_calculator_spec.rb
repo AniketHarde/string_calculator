@@ -44,4 +44,10 @@ RSpec.describe StringCalculator do
     end
 
   end
+
+  context "when given new lines between numbers" do
+    it "is expected to return 6 for '1\\n2,3'" do
+      expect(calculator.add("1\n2,3")).to eq(6)
+    end
+  end
 end
