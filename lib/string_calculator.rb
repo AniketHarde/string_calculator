@@ -7,7 +7,18 @@ class StringCalculator
   private
 
   def sum_of_numbers(numbers)
-    normalized = numbers.gsub("\n", ",")
-    normalized.split(",").map(&:to_i).sum
+    delimiter, numbers = saperate_delimiter_and_numbers(numbers)
+    normalized = numbers.gsub("\n", delimiter)
+    normalized.split(delimiter).map(&:to_i).sum
+  end
+
+  def saperate_delimiter_and_numbers(numbers)
+    delimiter = ","
+    if numbers.start_with?("//")
+      parts = numbers.split("\n", 2)
+      delimiter = parts.first.gsub("//", "")
+      numbers = parts.last
+    end
+    [delimiter, numbers]
   end
 end

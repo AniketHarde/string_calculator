@@ -59,6 +59,18 @@ RSpec.describe StringCalculator do
     it "is expected to return 3 for '//;\\n1;2'" do
       expect(calculator.add("//;\n1;2")).to eq(3)
     end
+
+    it "is expected to return 6 for '//;\\n1;2\\n3'" do
+      expect(calculator.add("//;\n1;2\n3")).to eq(6)
+    end
+
+    it "is expected to return 6 for '//|\\n1|2|3'" do
+      expect(calculator.add("//|\n1|2|3")).to eq(6)
+    end
+
+    it "is expected to return 10 for '//,\\n5,5'" do
+      expect(calculator.add("//,\n5,5")).to eq(10)
+    end
   end
 
 end
